@@ -1,39 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { Button } from "@cristianps1988/ds-template";
 import "@cristianps1988/ds-template/src/Button/button.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   const clicked = () => {
     console.log("Soy un botón");
   };
 
   return (
-    <>
-      <Button children="Soy un Botón" color="primary" onClick={clicked} />
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <h1 className="title">Componente creado con Storybook</h1>
+      <Button children="Soy Primary" color="primary" onClick={clicked} />
+      <Button children="Soy Secondary" color="secondary" onClick={clicked} />
+      <div className="sizes">
+        <Button children="Soy SM" color="primary" size="sm" onClick={clicked} />
+        <Button children="Soy MD" color="primary" size="md" onClick={clicked} />
+        <Button children="Soy LG" color="primary" size="lg" onClick={clicked} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
